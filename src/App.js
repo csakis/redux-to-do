@@ -1,14 +1,12 @@
-import React from 'react';
-import {createStore} from 'redux';
+import React from "react";
 
-import {Provider} from 'react-redux'
 
 function App() {
   return (
-
-    <div>
-     
-    </div>
+    
+      <div>
+        <h1>Hello</h1>
+      </div>
   );
 }
 
