@@ -2,33 +2,53 @@ import React from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../actions/add-todo";
 import { changeInput } from "../actions/change-input";
-import { FormControl, InputLabel, Input, Button } from "@material-ui/core";
+import { FormControl, Grid, Button, TextField } from "@material-ui/core";
 
 const TodoInput = props => {
   return (
     <div>
       <FormControl>
-        <InputLabel>Add Todo</InputLabel>
-        <Input value={props.input} onChange={props.onChangeInput} />
+        {/* <Inputbel>Add Todo</InputLabel> */}
+        <Grid
+          container
+          spacing={3}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item xs={8}>
+            <TextField
+              variant="outlined"
+              label="Add ToDo"
+              margin="normal"
+              value={props.input}
+              onChange={props.onChangeInput}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => {
+                props.onAddTodo(props.index + 1, props.input);
+              }}
+            >
+              Add to do
+            </Button>
+          </Grid>
+        </Grid>
       </FormControl>
-      <Button
-        onClick={() => {
-          props.onAddTodo(props.index + 1, props.input);
-        }}
-      >
-        Add to do
-      </Button>
     </div>
   );
 };
 
-const mapStatetoProps = state => {
+const mapStateToProps = state => {
   return {
     input: state.input.input,
     index: state.todos.index
   };
 };
-const mapActionstoProps = dispatch => {
+const mapActionsToProps = dispatch => {
   return {
     onAddTodo: (id, text) => {
       dispatch(addTodo({ id, text }));
@@ -39,6 +59,6 @@ const mapActionstoProps = dispatch => {
 };
 
 export default connect(
-  mapStatetoProps,
-  mapActionstoProps
+  mapStateToProps,
+  mapActionsToProps
 )(TodoInput);

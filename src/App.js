@@ -1,14 +1,14 @@
 import React from "react";
-import TodoInput from './components/ToDoInput'
-
+import TodoInput from "./components/ToDoInput";
+import { Container } from "@material-ui/core";
 
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <Container maxWidth="md" >
+      <h1>React-Redux To Do List with Material-UI</h1>
       <TodoInput />
-    </div>
+    </Container>
   );
 }
 
-export default App
+export default App;
