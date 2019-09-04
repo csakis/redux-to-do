@@ -1,7 +1,7 @@
-import { CHANGE_INPUT } from "../actions/change-input";
+import { CHANGE_INPUT } from "../constants/constants";
 
 const defaultState = {
-  input: "hello"
+  input: ""
 };
 
 export const inputReducer = (state = defaultState, { type, payload }) => {

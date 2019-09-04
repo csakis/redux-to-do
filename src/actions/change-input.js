@@ -1,4 +1,4 @@
-export const CHANGE_INPUT = "CHANGE_INPUT";
+import {CHANGE_INPUT} from '../constants/constants'
 
 export const changeInput = text => {
 

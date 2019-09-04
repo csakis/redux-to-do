@@ -3,10 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 // import { composeWithDevTools } from 'redux-devtools-extension';
-import { combineReducers, createStore} from "redux";
+import { combineReducers, createStore } from "redux";
 import { todosReducer } from "./reducers/todos-reducer";
 import { inputReducer } from "./reducers/input-reducer";
-import {addTodo} from './actions/add-todo'
 
 import { Provider } from "react-redux";
 
@@ -19,10 +18,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-store.dispatch(addTodo({
-    id:2,
-    text: "hello"
-}))
+console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>

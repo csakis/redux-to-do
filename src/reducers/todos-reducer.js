@@ -1,4 +1,4 @@
-import { ADD_TODO } from "../actions/add-todo";
+import { ADD_TODO } from "../constants/constants";
 
 const defaultState = {
   todos: [
