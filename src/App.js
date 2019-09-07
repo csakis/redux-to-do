@@ -5,7 +5,7 @@ import { Container } from "@material-ui/core";
 
 function App() {
   return (
-    <Container maxWidth="md" >
+    <Container maxWidth="sm" >
       <h1>React-Redux To Do List with Material-UI</h1>
       <TodoInput />
       <TodoList />

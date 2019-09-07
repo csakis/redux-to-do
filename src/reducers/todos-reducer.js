@@ -31,7 +31,6 @@ export const todosReducer = (state = defaultState, { type, payload }) => {
         ]
       };
     case TOGGLE_TODO:
-      console.log("payload:", payload);
       const todo = state.todos.find(x => payload === x.id);
       todo.isDone = !todo.isDone;
       const todos = [...state.todos];

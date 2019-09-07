@@ -3,24 +3,24 @@ import ToDo from "./ToDo";
 import { toggleTodo } from "../actions/toggle-todo";
 import { removeTodo } from "../actions/remove-todo";
 import { connect } from "react-redux";
-import { List } from "@material-ui/core";
+import { List, Grid } from "@material-ui/core";
 
-export const ToDoList = (props)=> {
-    const list = props.todos.map(x => (
-      <ToDo
-        key={x.id}
-        isDone={x.isDone}
-        id={x.id}
-        onClickTodo={props.onToggleTodo}
-        onClickRemove={props.onRemoveTodo}
-
-      >
-        {x.text}
-      </ToDo>
-    ));
-    return <List>{list}</List>;
-  }
-
+export const ToDoList = props => {
+  const list = props.todos.map(x => (
+    <ToDo
+      key={x.id}
+      isDone={x.isDone}
+      id={x.id}
+      onClickTodo={props.onToggleTodo}
+      onClickRemove={props.onRemoveTodo}
+    >
+      {x.text}
+    </ToDo>
+  ));
+  return ( <div>
+      {list}
+  </div>)
+};
 
 const mapStateToProps = state => {
   return {
