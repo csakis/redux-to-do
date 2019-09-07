@@ -24,7 +24,7 @@ export const todosReducer = (state = defaultState, { type, payload }) => {
         todos: [
           ...state.todos,
           {
-            id: payload.id,
+            id: state.index +1,
             text: payload.text,
             isDone: false
           }

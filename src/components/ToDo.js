@@ -4,10 +4,11 @@ import { connect } from "react-redux";
 import { ListItem } from "@material-ui/core";
 const ToDo = props => {
   return (
-    <ListItem onClick={() => props.onToggleTodo(props.id)}
-    style = {{
-        textDecoration: props.isDone? 'line-through': 'none'
-    }}
+    <ListItem
+      onClick={() => props.onToggleTodo(props.id)}
+      style={{
+        textDecoration: props.isDone ? "line-through" : "none"
+      }}
     >
       {props.children}
     </ListItem>
