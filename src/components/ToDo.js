@@ -7,7 +7,7 @@ const ToDo = props => {
       style={{
           textDecoration: props.isDone ? "line-through" : "none"
         }}>{props.children} </span> 
-      <span onClick = {() => console.log(props.id)}>X</span> 
+      <span onClick = {() => props.onClickRemove(props.id)}>X</span> 
     </ListItem>     
   );
 };

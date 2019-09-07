@@ -42,15 +42,8 @@ export const todosReducer = (state = defaultState, { type, payload }) => {
       };
     case REMOVE_TODO:
       return {
-        index: state.index + 1,
-        todos: [
-          ...state.todos,
-          {
-            id: payload.id,
-            text: payload.text,
-            isDone: false
-          }
-        ]
+        ...state,
+        todos: state.todos.filter(x => x.id !== payload)
       };
     default:
       return state;
