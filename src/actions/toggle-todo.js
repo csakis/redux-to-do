@@ -1,9 +1,6 @@
-import {TOGGLE_TODO} from '../constants/constants'
+import { TOGGLE_TODO } from "../constants/constants";
 
-export const toggleTodo = id => {
-
-  return {
-    type: TOGGLE_TODO,
-    payload: id
-  };
-};
+export const toggleTodo = id => ({
+  type: TOGGLE_TODO,
+  payload: id
+});

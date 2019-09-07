@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import { composeWithDevTools } from 'redux-devtools-extension';
 import { combineReducers, createStore } from "redux";
 import { todosReducer } from "./reducers/todos-reducer";
 import { inputReducer } from "./reducers/input-reducer";
