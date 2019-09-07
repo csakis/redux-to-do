@@ -6,20 +6,16 @@ const defaultState = {
       id: 0,
       text: "Learn Redux",
       isDone: false
-    },
-    {
-      id: 1,
-      text: "I hate Redux",
-      isDone: false
     }
   ],
-  index: 1
+  index: 0
 };
 
 export const todosReducer = (state = defaultState, { type, payload }) => {
   switch (type) {
     case ADD_TODO:
       return {
+        ...state,
         index: state.index + 1,
         todos: [
           ...state.todos,

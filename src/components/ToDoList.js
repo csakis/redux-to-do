@@ -3,7 +3,6 @@ import ToDo from "./ToDo";
 import { toggleTodo } from "../actions/toggle-todo";
 import { removeTodo } from "../actions/remove-todo";
 import { connect } from "react-redux";
-import { List, Grid } from "@material-ui/core";
 
 export const ToDoList = props => {
   const list = props.todos.map(x => (
@@ -17,9 +16,7 @@ export const ToDoList = props => {
       {x.text}
     </ToDo>
   ));
-  return ( <div>
-      {list}
-  </div>)
+  return <React.Fragment>{list}</React.Fragment>;
 };
 
 const mapStateToProps = state => {
