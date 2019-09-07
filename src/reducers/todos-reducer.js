@@ -5,46 +5,49 @@ const defaultState = {
     {
       id: 0,
       text: "Learn Redux",
-      done: false
+      isDone: false
+    },
+    {
+      id: 1,
+      text: "I hate Redux",
+      isDone: false
     }
   ],
-  index: 0
+  index: 1
 };
 
 export const todosReducer = (state = defaultState, { type, payload }) => {
   switch (type) {
     case ADD_TODO:
       return {
-        index: state.index +1,
+        index: state.index + 1,
         todos: [
           ...state.todos,
           {
             id: payload.id,
             text: payload.text,
-            done: false
+            isDone: false
           }
         ]
       };
     case TOGGLE_TODO:
+      const todo = state.todos.find(x => payload === x.id);
+      console.log(todo)
+      todo.isDone = !todo.isDone;
+      const todos = [...state.todos];
+      todos[payload.id] = todo;
       return {
-        todos: [
-          ...state.todos,
-          {
-            id: payload.id,
-            text: payload.text,
-            done: false
-          }
-        ]
+        todos
       };
     case REMOVE_TODO:
       return {
-        index: state.index +1,
+        index: state.index + 1,
         todos: [
           ...state.todos,
           {
             id: payload.id,
             text: payload.text,
-            done: false
+            isDone: false
           }
         ]
       };
