@@ -24,19 +24,20 @@ export const todosReducer = (state = defaultState, { type, payload }) => {
         todos: [
           ...state.todos,
           {
-            id: state.index +1,
+            id: state.index + 1,
             text: payload.text,
             isDone: false
           }
         ]
       };
     case TOGGLE_TODO:
+      console.log("payload:", payload);
       const todo = state.todos.find(x => payload === x.id);
-      console.log(todo)
       todo.isDone = !todo.isDone;
       const todos = [...state.todos];
       todos[payload.id] = todo;
       return {
+        ...state,
         todos
       };
     case REMOVE_TODO:
