@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import ToDoDelete from './ToDoDelete'
 const ToDo = props => (
   <React.Fragment>
     <Grid container direction="row" justify="space-between" alignItems="center">
@@ -13,16 +14,16 @@ const ToDo = props => (
           {props.children}
         </span>
       </Grid>
-      <Grid item>
-        <Button
+
+        <ToDoDelete id={props.id}/>
+        {/* <Button
           style={{ marginTop: "10px" }}
           variant="outlined"
           color="secondary"
           onClick={() => props.onClickRemove(props.id)}
         >
           X
-        </Button>
-      </Grid>
+        </Button> */}
     </Grid>
   </React.Fragment>
 );
