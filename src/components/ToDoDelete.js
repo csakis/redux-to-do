@@ -9,7 +9,7 @@ const ToDoDelete = props => {
         style={{ marginTop: "10px" }}
         variant="outlined"
         color="secondary"
-        onClick={() => props.onRemoveTodo(props.id)}
+        onClick={props.onRemoveTodo}
       >
         X
       </Button>
@@ -17,9 +17,9 @@ const ToDoDelete = props => {
   );
 };
 
-const mapActionsToProps = dispatch => ({
-  onRemoveTodo: id => {
-    dispatch(removeTodo(id));
+const mapActionsToProps = (dispatch, p) => ({
+  onRemoveTodo: () => {
+    dispatch(removeTodo(p.id));
   }
 });
 
